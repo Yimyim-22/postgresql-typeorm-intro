@@ -25,7 +25,7 @@ async function getBooksById(id){
     })
 
     if (!bookById) {
-        return "Book does not exist"
+        return null
     }
 
     return bookById
@@ -38,7 +38,7 @@ async function updateBooks(id, title, author){
     })
 
     if (!book) {
-        return "Book does not exist"
+        return null;
     }
 
     book.title = title
@@ -55,7 +55,7 @@ async function deleteBook(id){
     })
 
     if (!book) {
-        return "Book does not exist"
+        return null
     }
 
     await bookRepository.delete(book.id)
